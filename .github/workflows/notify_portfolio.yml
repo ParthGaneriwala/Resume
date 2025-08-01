@@ -1,0 +1,17 @@
+name: Notify Portfolio Resume Updated
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch to Portfolio
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repository: ParthGaneriwala/portfolio
+          event-type: resume-updated
