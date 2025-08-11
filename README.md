@@ -10,7 +10,7 @@ This repository contains my resume, authored in TeX.
 
 ## How to Build
 
-To compile the resume, you need a TeX distribution such as [TeX Live](https://www.tug.org/texlive/) or [MikTeX](https://miktex.org/).
+To compile the resume, you need a TeX distribution such as [TeX Live](https://www.tug.org/texlive/) or [MikTeX](https://miktex.org/), with support for lualatex.
 
 Run the following command in your terminal:
 
