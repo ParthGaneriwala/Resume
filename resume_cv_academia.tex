@@ -7,7 +7,7 @@
 % http://www.LaTeXTemplates.com
 %
 % Original author:
-% Claud D. Park (posquit0.bj@gmail.com) with modifications by 
+% Claud D. Park (posquit0.bj@gmail.com) with modifications by
 % Vel (vel@latextemplates.com)
 %
 % License:
@@ -18,6 +18,24 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 %
+% -----------------------------------------------------------------------
+% ACADEMIA VARIANT
+% Shares education.tex, writing.tex (Publications), and committees.tex
+% with resume_cv.tex (the industry variant) -- edit those in one place
+% and both stay in sync. Diverges intentionally in three places, each
+% audience-tailored, not fabricated -- same underlying facts, different
+% emphasis:
+%   - Section order: Publications right after Education (academic-CV
+%     convention for research-track applications), Skills last.
+%   - experience_academia.tex: Avidyne roles condensed to a few bullets
+%     each; ASSIST Research Lab kept in full (the research narrative is
+%     the centerpiece here). Compare against experience.tex (industry)
+%     when facts change -- dates/titles/metrics must match.
+%   - skills_academia.tex: drops Web & API Development, Frontend, and
+%     Project Tools (low signal for a research-committee audience).
+%   - Header position/address: leads with "Research Scholar" and the
+%     ASSIST Research Lab affiliation instead of the industry SWE title.
+% -----------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
@@ -49,27 +67,15 @@
 
 \name{}{Parth Ganeriwala, Ph.D.}
 % \address{911 Benton Drive, Melbourne, FL 32901}
-\address{Avidyne {|} ASSIST Research Lab, Florida Institute of Technology  \\Melbourne, FL 32934}
+\address{ASSIST Research Lab, Florida Institute of Technology  \\Melbourne, FL 32934}
 \mobile{(321) 419-8158}
 
-% \email{fnembhard@fit.edu}
-% \email{fitz@fitzwork.com}
 \email{ganeriwalaparth@gmail.com}
-% \email{pganeriwala2022@my.fit.edu}
 \homepage{parthganeriwala.com}
 \github{ParthGaneriwala}
 \linkedin{parth-ganeriwala}
-%\skype{skypeid}
-%\stackoverflow{SOid}{SOname}
-%\twitter{@twit}
-%\linkedin{linkedin name}
-%\reddit{reddit account}
-%\xing{xing name}
-%\extrainfo{test} % Other text you want to include on this line
 
-\position{Software Engineer II {\enskip\cdotp\enskip}Research Scholar}
-
-% \quote{``Make the change that you want to see in the world."} % A quote or statement
+\position{Research Scholar}
 
 \makecvfooter{\today}{Parth Ganeriwala~~~·~~~CV}{\thepage} % Specify the letter footer with 3 arguments: (<left>, <center>, <right>), leave any of these blank if they are not needed
 
@@ -80,34 +86,26 @@
 \makecvheader % Print the header
 
 %----------------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
-%	Each section is imported separately, open each file in turn to modify content
+%	CV/RESUME CONTENT -- ACADEMIA ORDER
+%	Content lives in cv-sections/*.tex (shared with resume_cv.tex).
+%	Only reorder \input lines here; do not fork section content.
 %----------------------------------------------------------------------------------------
 
-\input{cv-sections/summary_industry.tex}
+\input{cv-sections/summary_academia.tex}
 
 \input{cv-sections/education.tex}
-\input{cv-sections/skills.tex}
-\input{cv-sections/experience}
-% \input{cv-sections/formal_experience}
-
-% \newpage % Force a new page for looks
-% \input{cv-sections/honors.tex}
-% \input{cv-sections/presentation.tex}
-
-% \newpage
-
 
 \input{cv-sections/writing.tex}
-% \newpage
+
+\input{cv-sections/experience_academia.tex}
 
 \input{cv-sections/committees.tex}
 %\input{cv-sections/extracurricular.tex}
+% \input{cv-sections/honors.tex}
+% \input{cv-sections/presentation.tex}
 % \input{cv-sections/certifications.tex}
 
-% \newpage %Force a new page for looks
-
-
+\input{cv-sections/skills_academia.tex}
 
 %----------------------------------------------------------------------------------------
 
