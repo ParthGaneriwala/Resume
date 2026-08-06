@@ -20,12 +20,21 @@
 %
 % -----------------------------------------------------------------------
 % ACADEMIA VARIANT
-% Same content/section files as resume_cv.tex (the industry variant) --
-% only the \input order below differs, reordered per academic-CV
-% convention for research-track applications: Education, Publications,
-% Experience, Service (Program Committees), Skills last. Edit content in
-% cv-sections/*.tex, NOT here or in resume_cv.tex, so both variants stay
-% in sync automatically.
+% Shares education.tex, writing.tex (Publications), and committees.tex
+% with resume_cv.tex (the industry variant) -- edit those in one place
+% and both stay in sync. Diverges intentionally in three places, each
+% audience-tailored, not fabricated -- same underlying facts, different
+% emphasis:
+%   - Section order: Publications right after Education (academic-CV
+%     convention for research-track applications), Skills last.
+%   - experience_academia.tex: Avidyne roles condensed to a few bullets
+%     each; ASSIST Research Lab kept in full (the research narrative is
+%     the centerpiece here). Compare against experience.tex (industry)
+%     when facts change -- dates/titles/metrics must match.
+%   - skills_academia.tex: drops Web & API Development, Frontend, and
+%     Project Tools (low signal for a research-committee audience).
+%   - Header position/address: leads with "Research Scholar" and the
+%     ASSIST Research Lab affiliation instead of the industry SWE title.
 % -----------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -58,7 +67,7 @@
 
 \name{}{Parth Ganeriwala, Ph.D.}
 % \address{911 Benton Drive, Melbourne, FL 32901}
-\address{Avidyne {|} ASSIST Research Lab, Florida Institute of Technology  \\Melbourne, FL 32934}
+\address{ASSIST Research Lab, Florida Institute of Technology  \\Melbourne, FL 32934}
 \mobile{(321) 419-8158}
 
 \email{ganeriwalaparth@gmail.com}
@@ -66,7 +75,7 @@
 \github{ParthGaneriwala}
 \linkedin{parth-ganeriwala}
 
-\position{Software Engineer II {\enskip{\normalfont\textperiodcentered}\enskip}Research Scholar}
+\position{Research Scholar}
 
 \makecvfooter{\today}{Parth Ganeriwala~~~·~~~CV}{\thepage} % Specify the letter footer with 3 arguments: (<left>, <center>, <right>), leave any of these blank if they are not needed
 
@@ -82,12 +91,13 @@
 %	Only reorder \input lines here; do not fork section content.
 %----------------------------------------------------------------------------------------
 
+\input{cv-sections/summary_academia.tex}
+
 \input{cv-sections/education.tex}
 
 \input{cv-sections/writing.tex}
 
-\input{cv-sections/experience}
-% \input{cv-sections/formal_experience}
+\input{cv-sections/experience_academia.tex}
 
 \input{cv-sections/committees.tex}
 %\input{cv-sections/extracurricular.tex}
@@ -95,7 +105,7 @@
 % \input{cv-sections/presentation.tex}
 % \input{cv-sections/certifications.tex}
 
-\input{cv-sections/skills.tex}
+\input{cv-sections/skills_academia.tex}
 
 %----------------------------------------------------------------------------------------
 
