@@ -585,8 +585,15 @@
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
+  % Description is deliberately OUTSIDE the tabular* above (unlike the
+  % upstream template): a tabular* is one atomic, unbreakable block, so
+  % a long bullet list (e.g. Research Scholar's 13 items) couldn't split
+  % across a page boundary -- the whole entry, header rows and all bullets,
+  % had to move to the next page together, stranding blank space after
+  % the previous entry. Rendering the description in normal flow lets its
+  % itemize (cvitems) break naturally like ordinary body text.
+  \descriptionstyle{#5}%
 }
 
 % Define an environment for cvsubentry
@@ -649,7 +656,6 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
-  \vspace{-4.0mm}
   \begin{justify}
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
@@ -657,7 +663,6 @@
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-4.0mm}
 }
 
 
